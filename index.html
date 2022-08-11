@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="/style.css" rel="stylesheet">
+  <script src="/main.js"></script>
+  <link rel="preload" href="https://prod.spline.design/KAomYjR2h0aYbQ2X/scene.splinecode" as="fetch">
+</head>
+<body>
+  
+  <div id="app">
+    
+    <template>
+      
+  <v-app id="inspire">
+    
+    <v-main class="grey lighten-3">
+     
+      <v-app style=
+      background:#DCCBFF;
+    >
+      
+      <v-container>
+        <v-row>
+          <v-col
+            cols="12"
+            sm="6"
+          >
+             <v-img
+                  max-height="800"
+                  max-width="800"
+                  src="/self.png"
+                  >
+
+              </v-img>
+            
+            
+          </v-col>
+
+          <v-col
+            cols="12"
+            sm="6"
+          >
+          <!--buttons-->
+          <div class="text-center">
+            <v-btn 
+              href="https://www.youtube.com/channel/UCj1gXEcAyJDF7STvD2vZ13Q"
+              target="_blank"
+              class="ma-2"
+              outlined
+              color="black"
+              
+            >
+            
+              Youtube 
+            </v-btn>
+            <v-btn
+            href="https://www.instagram.com/girltechconnect/"
+            target="_blank"
+            class="ma-2"
+            outlined
+            color="black"
+          >
+          
+            instagram
+          </v-btn>
+          
+        <!--About Me Pop Up-->
+          <v-dialog
+            v-model="dialog"
+            fullscreen
+            hid-overlay
+            transition="dialog-top-transition"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                      v-bind="attrs"
+                      v-on="on"
+                      class="ma-2"
+                      outlined
+                      color="black"
+                    >About Me</v-btn>
+            </template>
+            <v-card>
+              <v-toolbar 
+                elevation="0"
+              >
+                <v-btn
+                  icon
+                  color="black"
+                  @click="dialog = false"
+                >
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
+            
+                </v-toolbar-items>
+                 <v-container>
+    
+              <v-img class="img"
+                    height=""
+                    src="popCard.png"
+                    >
+                  </v-img>
+                 </v-container>
+              
+            </v-card>
+          </v-dialog>
+          
+        </v-btn>
+            
+           
+            
+          </div>
+
+        <!--Spline-->   
+
+          <div class="spline">
+          <canvas id="canvas3d"></canvas>
+          <a class="logo" href="https://spline.design"></a>
+          <!-- Import maps polyfill -->
+          <!-- Remove this when import maps will be widely supported -->
+          <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+          <script type="importmap">
+            {
+              "imports": {
+                "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.93/build/runtime.js"
+              }
+            }
+          </script>
+          <script type="module" src="/main.js"></script>
+        </div>
+            </v-sheet>
+          </v-col>
+
+          <v-col
+            cols="12"
+            sm="2"
+          >
+
+          
+            </v-sheet>
+          </v-col>
+        </v-row> 
+        <v-row>
+          <v-col
+          cols="12"
+          sm="12"
+          class="d-flex justify-center"
+          >
+        <!-- YouTube Videos -->
+         <div class="vid1">     
+        <iframe width="280" height="157.5" src="https://www.youtube.com/embed/Kpvd6va6qkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <iframe width="280" height="157.5" src="https://www.youtube.com/embed/e2T8xJAVJG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </v-col>
+        </v-row>
+
+        <!-- Footer -->
+        <template>
+          <v-footer class="mt-10">
+            <v-col
+              class="text-center"
+              cols="12"
+            >
+              {{ new Date().getFullYear() }} — <strong>Jessica Underwood</strong>
+            </v-col>
+          </v-footer>
+        </template>
+      </v-container>
+    </v-main>
+  </v-app>
+</template>
+
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data () {
+    return {
+      dialog: false,
+      notifications: false,
+      sound: true,
+      widgets: false,
+    }
+  },
+})
+  </script>
+
+
+
+</body>
+</html>
